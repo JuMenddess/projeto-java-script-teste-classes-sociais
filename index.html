@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Teste Classe Social</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="configuracaopagina" style="padding: 115px">
+      <div class="titulo">
+        <h1>Divisão de Classes Sociais no Brasil</h1>
+      </div>
+
+      <div class="link_fonte">
+        <p>
+          <a
+            href="https://br.financas.yahoo.com/noticias/metade-da-populacao-continuara-a-ser-classes-d-e-e-no-brasil-ate-2024-190458975.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAKIuruCZs7ffqrmfbMeXuo-Ze9IPEcvW1bmf8e759QEereykdo_J1rOqhRE38whfk1Xb_z1kccn2xkDo1JSrN1SEHDHht8h0WtNZAdvadH2KWMO4AKyPgQ4tV1m5_hAildaLvOFLQe5XJX6rutLg8QvZFQlge8s5nkjfH710JNP0"
+          >
+            Fonte</a
+          >
+        </p>
+      </div>
+
+      <div
+        class="imagem"
+        style="
+          display: flex;
+          height: 250px;
+          padding: 30px;
+          justify-content: center;
+        "
+      >
+        <img
+          src="https://empreenderdinheiro.com.br/wp-content/uploads/2019/11/melhores-investimentos-com-pouco-dinheiro.jpg"
+          alt="foto de uma mão segurando algumas poucas moedas retiradas do bolso e mostrando o enchimento interno do bolso"
+        />
+      </div>
+
+      <div class="textoprincipal">
+        <p>
+          De acordo com um estudo publicado no site Yahoo Finanças no dia 26 de
+          abril de 2022, a expectativa é de que mais da metade da população
+          fique entre os mais pobres nos próximos dois anos, pois renda mensal
+          das classes D e E é de apenas R$ 2,9 por família.<br /><br />Até 2024
+          mais de metade da população brasileira deverá estar nas classes D e E,
+          de acordo com o estudo da Tendências Consultoria. De acordo com a
+          pesquisa, a retomada da economia apenas favoreceu as camadas mais
+          ricas da sociedade. <br />
+          <br />
+          A projeção indica que 50,7% dos domicílios do país terminarão o ano
+          com a renda mensal de até R$ 2,9 mil, enquanto apenas 2,8% serão da
+          classe A (recebendo acima de R$ 22 mil). <br />
+          <br />
+          A mobilidade social no Brasil deve ser bastante reduzida nos próximos
+          anos, acompanhando um fenômeno típico de países com alta desigualdade
+          de renda”, diz o estudo. Ou seja, a melhora na renda não deve
+          acontecer a curto ou médio prazo.<br />
+          <br />
+          A estimativa é que a renda da população mais pobre só comece a voltar
+          aos níveis de 2014 (47%) após 2024. Os dados são baseados na pesquisa
+          Classes de Renda e Consumo no Brasil (2022 a 2032).<br /><br />
+          O documento ressalta ainda que a ampliação permanente dos benefícios
+          sociais (como o Auxílio Brasil) não será suficiente para garantir o
+          enxugamento das classes D e E no curto prazo e as condições do mercado
+          de trabalho devem seguir deterioradas.
+        </p>
+      </div>
+
+      <div class="textoclassificação">
+        <h2>
+          Estratificação dos domicílios em 2022 (segundo informações do
+          Infomoney):
+        </h2>
+        <ul>
+          <li>Classe A: 2,8% (renda mensal domiciliar superior a R$ 22 mil</li>
+          <li>
+            Classe B: 13,2% (renda mensal domiciliar entre R$ 7,1 mil e R$ 22
+            mil)
+          </li>
+          <li>
+            Classe C: 33,3% (renda mensal domiciliar entre R$ 2,9 mil e R$ 7,1
+            mil)
+          </li>
+          <li>Classes D/E: 50,7% (renda mensal domiciliar até R$ 2,9 mil)</li>
+        </ul>
+      </div>
+
+      <div class="teste">
+        <h3>
+          Coloque aqui o seu salário mensal para saber em qual classe você se
+          encontra atualmente:
+        </h3>
+        <div>R$</div>
+        <input
+          min="1000"
+          value="1000"
+          type="number"
+          id="campobusca"
+          style="display: flex; height: 30px"
+        />
+      </div>
+      <br />
+
+      <div>
+        <label>Classe em que está:</label>
+        <p
+          id="resultado"
+          style="display: flex; height: 45px; text-align: center; padding: 10px"
+        ></p>
+        <br />
+      </div>
+
+      <div class="botao">
+        <button type="button" onclick="calcularimg()">
+          Clique aqui e saiba em qual Classe Social você se encaixa
+        </button>
+      </div>
+
+      <script>
+        function calcularimg() {
+          //entrada
+          var campobusca = document.getElementById('campobusca').value;
+          //entrada
+
+          //processamento
+          var resposta = '';
+
+          if (campobusca >= 22000) {
+            resposta =
+              'Parabéns, você faz parte da Classe A, que corresponde a 2,8% da População Brasileira';
+          } else if (campobusca >= 7100 && campobusca < 21999) {
+            resposta =
+              'Opa! Você faz parte da Classe B, que corresponde a 13,2% da População Brasileira';
+          } else if (campobusca >= 2901 && campobusca < 7099) {
+            resposta =
+              'Que pena, você faz parte da Classe C, que corresponde a 33,3% da População Brasileira';
+          } else if (campobusca <= 2900) {
+            resposta =
+              'Infelizmente, você faz parte da Classe D/E, que corresponde a 50,7% da População Brasileira';
+          }
+          //processamento
+
+          //saida
+          document.getElementById('resultado').innerHTML = resposta;
+          document.getElementById('resultado').style.border = '2px solid red';
+
+          //saida
+        }
+      </script>
+    </div>
+  </body>
+</html>
